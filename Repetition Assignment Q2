@@ -1,0 +1,6 @@
+BEGIN
+  DECLARE i as integer
+  FOR i←1 to 10 DO
+    PRINT "[",i,"|",i*i,"]"
+  ENDFOR
+END
