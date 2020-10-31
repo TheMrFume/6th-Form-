@@ -1,0 +1,7 @@
+BEGIN
+  DECLARE i as integer
+  CONSTANT string phrase = "When you have nothing to say, it is time to be silent"
+  FOR i←1 to 99 DO
+    PRINT phrase
+  ENDFOR
+END
