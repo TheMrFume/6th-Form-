@@ -18,7 +18,7 @@ BEGIN
   READ taxpayr
   REPEAT
     REPEAT
-      PRINT "Please enter a code: 1-Bike 2-Car 3-Truck"
+      PRINT "Please enter a code: 1-Bike 2-Car 3-Truck,0-When Done"
       READ code
       IF (code<0) OR (code>3) THEN
         PRINT error_mssg
