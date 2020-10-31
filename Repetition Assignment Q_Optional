@@ -1,0 +1,53 @@
+BEGIN
+  DECLARE
+    code,num_bike,num_car,num_truck as integer
+    taxpayr,transp as string
+    val,tax,rate as real
+  CONSTANT
+    real tax_bike = 0.02
+    real tax_car = 0.04
+    real tax_truck = 0.05
+    string transp_1 = "Bike"
+    string transp_2 = "Car"
+    string transp_3 = "Truck"
+    string error_mssg = "Invalid Input"
+  num_bike ← 0
+  num_car ← 0
+  num_truck ← 0
+  PRINT "Please enter your name"
+  READ taxpayr
+  REPEAT
+    REPEAT
+      PRINT "Please enter a code: 1-Bike 2-Car 3-Truck"
+      READ code
+      IF (code<0) OR (code>3) THEN
+        PRINT error_mssg
+      ENDIF
+    UNTIL (code>=0) AND (code<=3)
+    IF (code>=1) AND (code<=3) THEN
+      PRINT "Please enter the value of this item"
+      READ val
+      DOCASE
+        CASE code=1:
+          rate ← tax_bike
+          transp ← transp_1
+          num_bike ← num_bike + 1
+        CASE code=2:
+          rate ← tax_car
+          transp ← transp_2
+          num_car ← num_car + 1
+        CASE code=3:
+          rate ← tax_truck
+          transp ← transp_3
+          num_truck ← num_truck + 1
+      ENDCASE
+      tax ← val*rate
+      PRINT taxpayr,"'s ",transp," is worth ",val," thus is taxed at a value of ",tax
+    ENDIF
+  UNTIL code = 0
+  PRINT "REPORT SHOWING THE NUMBER OF EACH TRANSPORT"
+  PRINT "Transport  Number"
+  PRINT "Bike      ",num_bike
+  PRINT "Car       ",num_car
+  PRINT "Truck     ",num_truck
+END
