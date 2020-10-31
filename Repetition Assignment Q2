@@ -1,6 +1,7 @@
 BEGIN
-  DECLARE i as integer
+  DECLARE i,sq as integer
   FOR i←1 to 10 DO
-    PRINT "[",i,"|",i*i,"]"
+    sq ← i*i
+    PRINT "[",i,"|",sq,"]"
   ENDFOR
 END
