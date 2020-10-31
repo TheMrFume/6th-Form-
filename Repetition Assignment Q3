@@ -1,0 +1,18 @@
+//Draw a flowchart on this
+BEGIN
+  DECLARE 
+    amount,i,interest as real
+    yr as integer
+  CONSTANT
+    real min = 0.05
+    real max = 0.12
+    real incr = 0.005
+  PRINT "Please enter an amount of money"
+  READ amount
+  yr←0
+  FOR i←min to max STEP incr
+    yr←yr+1
+    interest←amount*i
+    PRINT "Year ",yr," Interest: ",interest
+  ENDFOR
+END
