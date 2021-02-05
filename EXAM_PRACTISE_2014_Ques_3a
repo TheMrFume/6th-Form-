@@ -1,0 +1,23 @@
+--//SEQUENCE\\--
+BEGIN
+  PRINT "Hello"
+  PRINT "World"
+END
+--//SELECTION\\--
+BEGIN
+  DECLARE a as int
+  READ a
+  IF(a=1) THEN
+    PRINT "Hello"
+  ELSE
+    PRINT "WORLD"
+  ENDIF
+END
+--//ITERATION\\--
+BEGIN
+  DECLARE a as int
+  READ a
+  WHILE(a=1) DO
+    PRINT "HELLO"
+  ENDWHILE
+END
