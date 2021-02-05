@@ -1,0 +1,15 @@
+BEGIN
+  DECLARE 
+    mins as int
+    cost as real
+  Constant real pre_add = 1.25
+  Constant real post_add = 0.25
+  PRINT "Please enter the total number of minutes"
+  READ mins
+  IF(mins<=20) THEN
+    cost <- mins * pre_add
+  ELSE
+    cost <- pre_add*20 + (mins-20)(post_add)
+  ENDIF
+  PRINT "The cost of the call is ",cost 
+END
