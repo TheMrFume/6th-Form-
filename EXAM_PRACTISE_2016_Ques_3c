@@ -1,0 +1,8 @@
+BEGIN
+  DECLARE i,sum as int
+  Const int seven = 7
+  FOR i <= 3 to 30 DO
+    sum <= sum + (seven*i)
+  ENDFOR
+  PRINT "The sum is",sum
+END
