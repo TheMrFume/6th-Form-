@@ -1,0 +1,10 @@
+BEGIN
+  DECLARE i,sum as int
+  sum <- 0
+  FOR i <- 101 to 249 DO
+    IF(i MOD 6 = 0) OR (i MOD 7 = 0) THEN
+      sum <- sum + i
+    ENDIF
+  ENDFOR
+  PRINT "The sum is",sum
+END
