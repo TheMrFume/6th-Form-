@@ -1,0 +1,44 @@
+BEGIN
+   DECLARE 
+    cust_id,num_books,num_cust,high_cust_id as int
+    rate_c as char
+    rate_r,fine,tot_fine_p,tot_fine_n,tot_fine,max as real
+   tot_fine_p <= 0
+   tot_fine_n <= 0
+   max <= 0
+   num_cust <= 0
+   REPEAT
+    PRINT "Please enter your ID. Enter 9999 to terminate."
+    READ cust_id
+    IF(cust_id<>9999) THEN
+      num_cust <= num_cust + 1
+      PRINT "Please enter the number of books you have outstanding"
+      READ num_books
+      PRINT "Please enter the rate at which the fines are charged. 'P' or 'N'"
+      READ rate_c
+      IF(rate_c='P') THEN
+        rate_r <= 4.50
+      ELSE
+        rate_r <= 6.50
+      ENDIF
+      fine <= rate_r * num_books
+      PRINT "The total outstanding fine for this customer is ",fine
+      IF(fine>max) THEN
+        high_cust_id <= cust_id
+        max <= fine
+      ENDIF
+      IF(rate_c='P') THEN
+        tot_fine_p <= tot_fine_p + fine
+      ELSE
+        tot_fine_n <= tot_fine_n + fine
+      ENDIF
+    END
+   UNTIL(cust_id=9999)
+   tot_fine <= tot_fine_p + tot_fine_n
+   PRINT "--//TOTALS\\--"
+   PRINT "The total outstanding fines for category P is",tot_fine_p
+   PRINT "The total outstanding fines for category N is",tot_fine_n
+   PRINT "The total outstanding fines overall is",tot_fine
+   PRINT "The total number of customers is",num_cust
+   PRINT "The highest paying customer has an ID of", high_cust_id
+END
