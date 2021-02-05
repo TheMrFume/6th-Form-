@@ -1,0 +1,29 @@
+BEGIN
+  DECLARE
+    i,choice,tot_m,tot_e,tot_s,tot as int
+  FOR i <- 1 to 100 DO
+    PRINT "Please enter an option."
+    PRINT "1 -> Mathematics"
+    PRINT "2 -> English"
+    PRINT "3 -> Spanish"
+    PRINT "4 -> none"
+    READ choice
+    IF(choice=1) THEN
+      tot_m <- tot_m + 1
+    ELSE
+      IF(choice=2) THEN
+        tot_e <- tot_e + 1
+      ELSE
+        IF(choice=3) THEN
+          tot_s <- tot_s + 1
+        ENDIF
+      ENDIF
+    ENDIF
+  ENDFOR
+  tot <- tot_m + tot_e + tot_s
+  PRINT "Totals"
+  PRINT "Math :",tot_m
+  PRINT "English:",tot_e
+  PRINT "Spanish:",tot_s
+  PRINT "Overall:",tot
+END
