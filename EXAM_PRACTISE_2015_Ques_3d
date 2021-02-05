@@ -1,0 +1,14 @@
+BEGIN
+  DECLARE i,m,n,sum as int
+  Constant int eight = 8
+  Constant int eleven = 11
+  PRINT "Please enter two positive integers where n>m"
+  READ m,n
+  sum <- 0
+  FOR i <- m to (n-1) DO
+    IF(i MOD 8 =0) OR (i MOD 11=0) THEN
+      sum <- sum + i
+    ENDIF
+  ENDFOR
+  PRINT "The sum is",sum
+END
