@@ -1,0 +1,11 @@
+BEGIN
+  DECLARE 
+    i,prod as int
+  prod <- 1
+  FOR i <- 12 to 599 DO
+    IF(i MOD 6=0) THEN
+      prod <- prod*i
+    ENDIF
+  ENDFOR
+  PRINT "The product is",prod
+END
