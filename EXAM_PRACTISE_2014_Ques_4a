@@ -1,0 +1,23 @@
+BEGIN
+  DECLARE
+    i as int
+    disc,disc_amt,sale_price,new_price,tot_disc as real
+    prod as string
+  tot_disc <- 0
+  FOR i <- 1 to 10 DO
+    PRINT "Please enter the name of the product"
+    READ prod
+    PRINT "Please enter the price of the product"
+    READ sale_price
+    PRINT "Please enter the discount percentage(0-100)"
+    READ disc
+    disc_amt <- (disc/100) * sale_price
+    tot_disc <- tot_disc + disc_amt
+    new_price <- sale_price - disc_amt
+    PRINT "Product|Discount|New Price
+    PRINT prod," ",disc_amt," ",new_price
+  ENDFOR
+  IF (tot_disc>500) THEN
+    PRINT "Discounts exceeded"
+  ENDIF
+END
