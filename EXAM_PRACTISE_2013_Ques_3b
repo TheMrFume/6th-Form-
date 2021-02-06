@@ -1,0 +1,15 @@
+BEGIN
+  DECLARE
+    mins as int
+    amt as real
+  Constant real pre_ten = 1.5
+  Constant real add_ten = 0.5
+  PRINT "Please enter the number of minutes used for your call"
+  READ mins
+  IF(mins<=10) THEN
+    amt <- mins * pre_ten
+  ELSE
+    amt <- (10*pre_ten) + (mins-10)*add_ten
+  ENDIF
+  PRINT "The cost of the call is",amt
+END
