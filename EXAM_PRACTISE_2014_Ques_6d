@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main(){
+  float price,tax,new_price;
+  puts("Please enter a price");
+  scanf("%f",&price);
+  puts("Please enter the tax(0-100)");
+  scanf("%f",&tax);
+  tax/=100;
+  new_price = price*(1+tax);
+  printf("Old price: $%.0f\n",price);
+  printf("New price: $%.0f\n",new_price);
+  return 0;
+}
