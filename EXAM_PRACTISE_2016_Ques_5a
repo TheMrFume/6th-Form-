@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main(){
+  int r=rand()%10+1,c=0,n;
+  do{
+    puts("Please guess a number from 1-10");
+    scanf("%d",&n);
+    if(n!=r){
+      puts("Wrong Number!");
+      c++;
+    }
+  }while(n!=r);
+  puts("You guess correctly!");
+  printf("It took you %d times",c); 
+  return 0;
+}
