@@ -1,0 +1,14 @@
+void avg_four(){
+  int a,b,c,d;
+  float avg;
+  puts("Enter the first integer");
+  scanf("%d",&a);
+  puts("Enter the second integer");
+  scanf("%d",&b);
+  puts("Enter the third integer");
+  scanf("%d",&c);
+  puts("Enter the fourth integer");
+  scanf("%d",&d);
+  avg = (float)(a+b+c+d)/4;
+  printf("The average is %.1f",avg);
+}
